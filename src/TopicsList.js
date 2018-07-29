@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import topics from './data/topics'
 import _ from 'lodash';
 
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
 class TopicsList extends Component{
   render() {
     return (
       <div>
       {
-        _.sortBy(topics,'totalVote').reverse().map(topic => {
+        _.sortBy(this.props.topics,'totalVote').reverse().map(topic => {
             return(
               <div key={topic.id} className="columnStyle topicContainer ">
                 <h4>{topic.topicTitle}</h4>
@@ -38,5 +41,11 @@ class TopicsList extends Component{
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    topics: state.topics
+  };
+}
 
-export default TopicsList
+
+export default connect(mapStateToProps, null)(TopicsList) 
