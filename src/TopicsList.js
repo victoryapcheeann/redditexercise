@@ -3,25 +3,25 @@ import _ from 'lodash';
 import { connect } from "react-redux";
 import { upvoteTopics, downvoteTopics } from './actions';
 
-class TopicsList extends Component{  
-  state = { 
+class TopicsList extends Component{
+  state = {
     sortingStyle: 'totalVote',
   };
-  
+
   //Action function
   upvoteTopics(id) {this.props.upvoteTopics(id);}
   downvoteTopics(id) {this.props.downvoteTopics(id);}
-  
+
   //Toggle between totalvote and newvote
   sortByTopVote = event => {this.setState ({sortingStyle: 'totalVote'});};
   sortByNewVote = event => {this.setState ({sortingStyle: 'id'});};
-  
+
   render() {
     return (
       <div>
         <div className = "rowStyle">
-          <button onClick={this.sortByTopVote}>Top Vote</button>
-          <button onClick={this.sortByNewVote}>New Vote</button>
+          <button onClick={this.sortByTopVote}>Sort by popularity</button>
+          <button onClick={this.sortByNewVote}>Sort by newest</button>
         </div>
       {
         _.sortBy(this.props.topics, `${this.state.sortingStyle}`).reverse().slice(0,20).map(topic => {
@@ -33,7 +33,7 @@ class TopicsList extends Component{
                     <button onClick={() => this.upvoteTopics(topic.id)}>
                       Upvote
                     </button>
-                    <span>{topic.upvote}</span>              
+                    <span>{topic.upvote}</span>
                   </div>
                   <div className="columnStyle downvoteContainer">
                     <button onClick={() => this.downvoteTopics(topic.id)}>
@@ -69,4 +69,4 @@ const mapDispatchToProps = {
 }
 
 //Link to the store
-export default connect(mapStateToProps, mapDispatchToProps)(TopicsList) 
+export default connect(mapStateToProps, mapDispatchToProps)(TopicsList)
