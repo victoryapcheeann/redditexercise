@@ -4,7 +4,9 @@ import { connect } from "react-redux";
 import { upvoteTopics, downvoteTopics } from './actions';
 
 class TopicsList extends Component{  
-  state = { sortingStyle: 'totalVote' };
+  state = { 
+    sortingStyle: 'totalVote',
+  };
   
   //Action function
   upvoteTopics(id) {this.props.upvoteTopics(id);}

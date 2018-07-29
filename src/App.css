@@ -26,12 +26,15 @@ button {
 }
 
 .topicContainer {
-    display: inline-block;
     margin: 10px;
     background-color: lightBlue;
     padding: 10px;
     border-radius: 30px;
     width: 250px;
+}
+
+.topicInline {
+    display: inline-block;
 }
 
 .voteContainer {
