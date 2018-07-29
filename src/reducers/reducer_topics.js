@@ -8,7 +8,7 @@ export default function(state = topics, action) {
   switch (action.type) {
     case 'SAVE_TOPICS':    
       return [
-        ...state, 
+        ...state,
         { "id": newID,
           "topicTitle": action.topics,
           "upvote": 0,
