@@ -7,6 +7,7 @@ body {
 
 button {
   border-radius: 50px;
+  outline:none;
 }
 
 .rowStyle {

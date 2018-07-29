@@ -1,18 +1,41 @@
 import topics from '../data/topics'
-import { SAVE_TOPICS } from '../actions';
 import _ from 'lodash';
 
-export default function(state = topics, action) {
-  let newID = _.maxBy(state, 'id').id + 1;   
+export default function(state = topics, action) {  
+  let newID = _.maxBy(state, 'id').id + 1; 
+  let i = action.id;
+  
   switch (action.type) {
-    case SAVE_TOPICS:
+    
+    case 'SAVE_TOPICS':
+      
       return [
         ...state, 
         { "id": newID,
-          "topicTitle": action.payload.topics,
+          "topicTitle": action.topics,
           "upvote": 0,
           "downvote": 0,
           "totalVote": 0 }];
+      
+    case 'UPVOTE_TOPICS':
+      return [
+        ...state.slice(0,i), // before the one we are updating
+        {...state[i], 
+          upvote: state[i].upvote + 1,
+          totalVote: state[i].totalVote + 1
+        },
+        ...state.slice(i + 1) // after the one we are updating
+      ]
+    
+    case 'DOWNVOTE_TOPICS':
+        return [
+          ...state.slice(0,i), // before the one we are updating
+          {...state[i], 
+            downvote: state[i].downvote + 1,
+            totalVote: state[i].totalVote - 1
+          },
+          ...state.slice(i + 1) // after the one we are updating
+        ]
     default: 
       return state;
   }

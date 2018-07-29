@@ -16,7 +16,7 @@ class TopicCreateBox extends Component{
   };
   
   saveTopics() {
-    this.props.saveTopics(this.state);
+    this.props.saveTopics(this.state.topics);
   }
 
   render() {
