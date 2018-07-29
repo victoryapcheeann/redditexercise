@@ -1,3 +1,39 @@
-.App {
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+}
+
+button {
+  border-radius: 50px;
+}
+
+.rowStyle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.columnStyle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.topicContainer {
+    margin: 10px;
+    background-color: lightBlue;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.voteContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
 }
