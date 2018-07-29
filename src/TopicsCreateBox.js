@@ -3,36 +3,48 @@ import { connect } from 'react-redux'
 import { saveTopics } from './actions';
 
 class TopicCreateBox extends Component{
-  state = { 
-    topics: '' ,
-    exceedLength: false
+  state = {
+    topics: '',
+    isEmpty: false
   };
-  
+
   //Action function
   saveTopics() {this.props.saveTopics(this.state.topics);}
-    
+
   //Assign the value to the topics state when it changes
   handleChange = event => {
     this.setState({ topics: event.target.value });
   };
-  
+
   //Save the topics when clicked
   handleSubmit = event => {
     event.preventDefault();
-    this.saveTopics();
-    this.setState({ topics: '' });
+    if (this.state.topics.trim() != "") {
+      this.saveTopics();
+      this.setState({
+        topics: '',
+        isEmpty: false
+      });
+    }
+    else {
+      this.setState({ isEmpty: true })
+    }
   };
-  
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className = "columnStyle">
           <span>Create a new topic</span>
-            <textarea 
+            <textarea
               maxLength="255"
-              onChange={this.handleChange} 
+              onChange={this.handleChange}
               value={this.state.topics} />
-          <button>Submit topic</button> 
+              {
+                this.state.isEmpty ?
+                    <span data-test="error-message" className="warningText">Please type something before you submit</span>: null
+              }
+          <button>Submit topic</button>
         </div>
       </form>
     )

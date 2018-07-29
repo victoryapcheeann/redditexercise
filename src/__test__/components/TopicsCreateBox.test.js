@@ -40,3 +40,12 @@ describe('the text area', () => {
     expect(wrapped.find('textarea').prop('value')).toEqual('');
   });
 });
+
+it('expect error message to be throw when empty string is submitted', () => {
+  wrapped.find('textarea').simulate('change', {
+    target: { value: '' }
+  });
+  wrapped.find('form').simulate('submit');
+  wrapped.update();
+  expect(wrapped.find("[data-test='error-message']").length).toEqual(1);
+});
