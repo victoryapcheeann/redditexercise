@@ -8,8 +8,8 @@ class App extends Component{
     return (
       <div>
         <h2>Reddit Exercise</h2>
-        <TopicsCreateBox />
-        <TopicsList />
+        <TopicsCreateBox /> {/*This is the component to create new topics*/}
+        <TopicsList /> {/*This is the component to view, upvote and downvote topics*/}
       </div>
     )
   }
