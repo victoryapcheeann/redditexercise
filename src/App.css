@@ -8,6 +8,7 @@ body {
 button {
   border-radius: 50px;
   outline:none;
+  margin: 10px;
 }
 
 .rowStyle {
@@ -25,10 +26,12 @@ button {
 }
 
 .topicContainer {
+    display: inline-block;
     margin: 10px;
     background-color: lightBlue;
     padding: 10px;
     border-radius: 30px;
+    width: 250px;
 }
 
 .voteContainer {

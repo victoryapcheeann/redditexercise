@@ -4,14 +4,28 @@ import { connect } from "react-redux";
 import { upvoteTopics, downvoteTopics } from './actions';
 
 class TopicsList extends Component{  
+  state = { sortingStyle: 'totalVote' };
+  
   upvoteTopics(id) {this.props.upvoteTopics(id);}
   downvoteTopics(id) {this.props.downvoteTopics(id);}
+  
+  sortByTopVote = event => {
+    this.setState ({sortingStyle: 'totalVote'});
+  };
+  
+  sortByNewVote = event => {
+    this.setState ({sortingStyle: 'id'});
+  };
   
   render() {
     return (
       <div>
+        <div className = "rowStyle">
+          <button onClick={this.sortByTopVote}>Top Vote</button>
+          <button onClick={this.sortByNewVote}>New Vote</button>
+        </div>
       {
-        _.sortBy(this.props.topics,'totalVote').reverse().map(topic => {
+        _.sortBy(this.props.topics, `${this.state.sortingStyle}`).reverse().slice(0,20).map(topic => {
             return(
               <div key={topic.id} className="columnStyle topicContainer ">
                 <h4>{topic.id}</h4>
