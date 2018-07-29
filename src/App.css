@@ -41,3 +41,23 @@ button {
     flex-direction: row;
     width: 100%;
 }
+
+.upvoteContainer {
+  background-color: lightgreen;
+  border-radius: 20px;
+}
+
+.downvoteContainer {
+  background-color: lightpink;
+  border-radius: 20px;
+}
+
+.totalVoteContainer {
+  background-color: yellow;
+  height: 30px;
+  padding: 10px;
+}
+
+.warningText {
+  color: red;
+}

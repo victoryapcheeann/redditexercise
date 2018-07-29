@@ -6,27 +6,23 @@ export default function(state = topics, action) {
   let i = action.id;
   
   switch (action.type) {
-    
-    case 'SAVE_TOPICS':
-      
+    case 'SAVE_TOPICS':    
       return [
         ...state, 
         { "id": newID,
           "topicTitle": action.topics,
           "upvote": 0,
           "downvote": 0,
-          "totalVote": 0 }];
-      
+          "totalVote": 0 }]; // add a new topics with zero vote 
     case 'UPVOTE_TOPICS':
       return [
-        ...state.slice(0,i), // before the one we are updating
+        ...state.slice(0,i), // before the one we are updating, ensure that the state remains un changed
         {...state[i], 
           upvote: state[i].upvote + 1,
           totalVote: state[i].totalVote + 1
         },
-        ...state.slice(i + 1) // after the one we are updating
+        ...state.slice(i + 1) // after the one we are updating, ensure that the state remains un changed
       ]
-    
     case 'DOWNVOTE_TOPICS':
         return [
           ...state.slice(0,i), // before the one we are updating
