@@ -1,4 +1,5 @@
-1) Assumption, How's and Why's of my implmentation [a link](https://docs.google.com/document/d/13HYGgqPMNd1XVGy11am7l_FrM4bGUJ0cfJlfspveWGI/edit?usp=sharing)
+1) [Assumption, How's and Why's of my implmentation](https://docs.google.com/document/d/13HYGgqPMNd1XVGy11am7l_FrM4bGUJ0cfJlfspveWGI/edit?usp=sharing)
+I placed it in a Google Docs so that it is easily for you to read.
  
 2) Boilerplate - create-react-app, however, I removed most of the files after that
 create-react-app allows me to get started faster. It gives me webpack, babel, jest, react, lowering the amount of time I need to setup. Belows are the details of create react app
