@@ -2,9 +2,12 @@
 I placed it in a Google Docs so that it is easily for you to read.
  
 2) Boilerplate - create-react-app, however, I removed most of the files after that
-create-react-app allows me to get started faster. It gives me webpack, babel, jest, react, lowering the amount of time I need to setup. Belows are the details of create react app
+create-react-app allows me to get started faster. 
+
+It gives me webpack, babel, jest, react, lowering the amount of time I need to setup. Belows are the details of create react app
 
 3) Details of create react app
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
