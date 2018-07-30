@@ -1,6 +1,8 @@
 1) [Assumption, How's and Why's of my implementation](https://docs.google.com/document/d/13HYGgqPMNd1XVGy11am7l_FrM4bGUJ0cfJlfspveWGI/edit?usp=sharing)
 
    I placed it in a Google Docs so that it is easily for you to read.
+   
+   [Link to website](https://redditexercise-victoryap.netlify.com/)
  
 2) Boilerplate - create-react-app, however, I removed most of the files after that
    
