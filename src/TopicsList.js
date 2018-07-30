@@ -42,7 +42,7 @@ class TopicsList extends Component{
                     <span>{topic.downvote}</span>
                   </div>
                   <div className="columnStyle totalVoteContainer">
-                    <span>Total Vote</span>
+                    <span>Total Upvote</span>
                     <span>{topic.totalVote}</span>
                   </div>
                 </div>
